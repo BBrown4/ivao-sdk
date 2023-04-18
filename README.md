@@ -4,7 +4,6 @@ ___
 The IVAO-SDK is a wrapper for interacting with the IVAO API and pulling data from IVAO for use in any web app.
 
 ### Installation
-To get started using IVAO-SDK in your project, simply run the following command in your terminal:
 ```
 $ npm i ivao-sdk -D
 ```
@@ -20,6 +19,11 @@ const ivaoClient = new ivaoSdk.IvaoClient(); // default data refresh rate of 15 
 // Listen for connected event to know when the client is ready to use.
 ivaoClient.on('connected', () => {
   console.log('Connected to IVAO API');
+  
+  // The SDK also emits an event for when data is refreshed if you wish to perform logic on data refresh
+    ivaoClient.on('dataRefreshed', () => {
+        console.log('Data refreshed');
+    });
 });
 ```
 
@@ -29,3 +33,28 @@ const ivaoClient = new ivaoSdk.IvaoClient({
   refreshRate: 30 // refresh data every 30 seconds
 });
 ```
+
+### Quickstart Example
+```javascript
+const ivaoSdk = require('ivao-sdk');
+const ivaoClient = new ivaoSdk.IvaoClient();
+
+ivaoClient.on('connected', () => {
+  console.log('Connected to IVAO API');
+
+  const pilots = ivaoClient.getIvaoPilotsFiltered({
+    flightPlan: {
+      aircraft: {
+        icaoCode: 'B738',
+      },
+    },
+  });
+
+  console.log(pilots);
+  console.log('Result count:', pilots.length);
+});
+```
+
+### Documentation
+See the [IVAO SDK documentation]('https://bbrown4.github.io/ivao-sdk/classes/clients_IvaoClient.IvaoClient.html') for more information and usage examples of
+the client methods.

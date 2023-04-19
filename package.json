@@ -20,6 +20,10 @@
     "nodejs"
   ],
   "author": "Brandon Brown",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BBrown4/ivao-sdk.git"
+  },
   "license": "GNU General Public License v3.0",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.58.0",

@@ -9,7 +9,7 @@
     "lint": "eslint --ext .ts src/",
     "lint:fix": "eslint --ext .ts src/ --fix",
     "docs": "npx typedoc",
-    "build": "tsc && npm run docs",
+    "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && ./fixup && npm run docs",
     "start": "ts-node index.ts"
   },
   "keywords": [

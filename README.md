@@ -56,5 +56,5 @@ ivaoClient.on('connected', () => {
 ```
 
 ### Documentation
-See the [IVAO SDK documentation]('https://bbrown4.github.io/ivao-sdk/classes/clients_IvaoClient.IvaoClient.html') for more information and usage examples of
+See the [IVAO SDK documentation](https://bbrown4.github.io/ivao-sdk/classes/clients_IvaoClient.IvaoClient.html) for more information and usage examples of
 the client methods.

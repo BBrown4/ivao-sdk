@@ -1,5 +1,5 @@
 # ci.yml file for GitHub Actions
-name: CI
+name: Build Confirmation
 
 on: [push, pull_request]
 permissions:

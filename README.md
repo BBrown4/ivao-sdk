@@ -1,6 +1,5 @@
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/BBrown4/ivao-sdk/test-build.yaml?style=flat-square)
-
 # IVAO-SDK
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/BBrown4/ivao-sdk/test-build.yaml?style=flat-square)
 ___
 ## Introduction
 The IVAO-SDK is a wrapper for interacting with the IVAO API and pulling data from IVAO for use in any web app.

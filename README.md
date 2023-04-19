@@ -1,3 +1,5 @@
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/BBrown4/ivao-sdk/test-build.yaml?style=flat-square)
+
 # IVAO-SDK
 ___
 ## Introduction

@@ -7,10 +7,11 @@
   "module": "dist/index.mjs.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "preversion": "npm run build",
+    "preversion": "npm run build && npm run clean:docs",
     "postversion": "git push --follow-tags",
     "docs": "npx typedoc",
-    "clean": "rimraf dist && rimraf esm",
+    "clean": "rimraf dist",
+    "clean:docs": "rimraf docs",
     "prebuild": "npm run clean",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
     "start": "ts-node src/index.ts",

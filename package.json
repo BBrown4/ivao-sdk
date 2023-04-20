@@ -15,8 +15,7 @@
     "deep-clean": "npm run clean && npm run clean:docs",
     "prebuild": "npm run clean",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
-    "start": "ts-node src/index.ts",
-    "prepublish": "npm run deep-clean && npm run build"
+    "start": "ts-node src/index.ts"
   },
   "keywords": [
     "ivao",

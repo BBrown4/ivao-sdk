@@ -4,18 +4,19 @@
   "description": "A wrapper SDK for interacting wtih the IVAO API",
   "type": "commonjs",
   "main": "dist/index.cjs.js",
-  "module": "dist/index.mjs.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "preversion": "npm run build && npm run clean:docs",
+    "preversion": "npm run deep-clean && npm run build",
     "postversion": "git push --follow-tags",
     "docs": "npx typedoc",
     "clean": "rimraf dist",
     "clean:docs": "rimraf docs",
+    "deep-clean": "npm run clean && npm run clean:docs",
     "prebuild": "npm run clean",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
     "start": "ts-node src/index.ts",
-    "prepublish": "npm run build"
+    "prepublish": "npm run deep-clean && npm run build"
   },
   "keywords": [
     "ivao",

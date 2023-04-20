@@ -9,7 +9,7 @@
     "typedoc-theme-hierarchy"
   ],
   "theme": "hierarchy",
-  "tsconfig": "./tsconfig-base.json",
+  "tsconfig": "./tsconfig.json",
   "exclude": ["**/node_modules/**/*"],
   "excludePrivate": true,
   "excludeProtected": true,

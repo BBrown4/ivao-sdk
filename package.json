@@ -1,16 +1,20 @@
 {
   "name": "ivao-sdk",
   "version": "1.0.1",
-  "description": "",
-  "main": "dist/index.js",
+  "description": "A wrapper SDK for interacting wtih the IVAO API",
+  "type": "commonjs",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.mjs.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .ts src/",
-    "lint:fix": "eslint --ext .ts src/ --fix",
+    "preversion": "npm run build",
+    "postversion": "git push --follow-tags",
     "docs": "npx typedoc",
-    "build": "tsc && npm run docs",
-    "start": "ts-node index.ts"
+    "clean": "rimraf dist && rimraf esm",
+    "prebuild": "npm run clean",
+    "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
+    "start": "ts-node src/index.ts",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "ivao",
@@ -26,20 +30,30 @@
   },
   "license": "GNU General Public License v3.0",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.7",
+    "rimraf": "^5.0.0",
+    "rollup": "^3.20.6",
+    "rollup-plugin-typescript2": "^0.34.1",
     "ts-node": "^10.9.1",
     "typedoc": "^0.23.28",
     "typedoc-theme-hierarchy": "^3.1.0",
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@rollup/plugin-json": "^6.0.0",
     "axios": "^1.3.5",
+    "files": "^2.2.2",
+    "import": "^0.0.6",
+    "JSON": "^1.0.0",
     "tiny-typed-emitter": "^2.1.0",
+    "to": "^0.2.9",
     "winston": "^3.8.2"
   }
 }

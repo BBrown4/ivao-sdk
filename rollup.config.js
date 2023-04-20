@@ -15,7 +15,19 @@ export default [
                 file: 'dist/index.esm.js',
                 format: 'esm',
             },
+            {
+                file: 'dist/index.umd.js',
+                format: 'umd',
+                name: 'IvaoSDKBundle',
+            },
         ],
-        plugins: [typescript(), json(), nodeResolve(), commonjs()],
+        plugins: [
+            typescript(),
+            json(),
+            nodeResolve({
+                preferBuiltins: true,
+            }),
+            commonjs(),
+        ],
     },
 ];

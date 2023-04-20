@@ -6,6 +6,9 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "preversion": "npm run deep-clean && npm run build",
     "postversion": "git push --follow-tags",
@@ -15,7 +18,8 @@
     "deep-clean": "npm run clean && npm run clean:docs",
     "prebuild": "npm run clean",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "prepublishOnly": "npm run deep-clean && npm run build"
   },
   "keywords": [
     "ivao",

@@ -49,7 +49,7 @@ export class IvaoClient extends TypedEmitter<IIvaoClientEvents> {
         super();
 
         this.isRunning = true;
-        this.initLogger();
+        this.logger = this.initLogger();
 
         // get initial data
         this.refreshIvaoData()
@@ -724,17 +724,19 @@ export class IvaoClient extends TypedEmitter<IIvaoClientEvents> {
             });
     }
 
-    private initLogger(): void {
-        this.logger = winston.createLogger({
+    private initLogger(): winston.Logger {
+        const logger = winston.createLogger({
             level: 'info',
             format: winston.format.json(),
         });
 
         // if we're not in production, log to console
-        this.logger.add(
+        logger.add(
             new winston.transports.Console({
                 format: winston.format.simple(),
             })
         );
+
+        return logger;
     }
 }

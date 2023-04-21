@@ -91,12 +91,24 @@ export class IvaoClient extends TypedEmitter<IIvaoClientEvents> {
 
     private async refreshIvaoData(): Promise<IIvaoData> {
         return new Promise((resolve, reject) => {
-            axios
-                .get(this.API_URL)
-                .then((response) => {
-                    resolve(response.data);
+            // axios
+            //     .get(this.API_URL)
+            //     .then((response) => {
+            //         resolve(response.data);
+            //
+            //         this.emit('dataRefreshed', response.data);
+            //     })
+            //     .catch((error) => {
+            //         reject(error);
+            //     });
 
-                    this.emit('dataRefreshed', response.data);
+            // fetch
+            fetch(this.API_URL)
+                .then((response) => response.json())
+                .then((data) => {
+                    resolve(data);
+
+                    this.emit('dataRefreshed', data);
                 })
                 .catch((error) => {
                     reject(error);

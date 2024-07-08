@@ -1,5 +1,6 @@
 # IVAO-SDK
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/BBrown4/ivao-sdk/test-build.yaml?style=flat-square) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/BBrown4/ivao-sdk/docs-deploy.yaml?label=docs%20deployment&style=flat-square)
+![npm version](https://img.shields.io/badge/npm-1.0.9-blue
+) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/BBrown4/ivao-sdk/test-build.yaml?style=flat-square) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/BBrown4/ivao-sdk/docs-deploy.yaml?label=docs%20deployment&style=flat-square)
 
 https://www.npmjs.com/package/ivao-sdk
 ___

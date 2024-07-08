@@ -1,5 +1,7 @@
 # IVAO-SDK
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/BBrown4/ivao-sdk/test-build.yaml?style=flat-square) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/BBrown4/ivao-sdk/docs-deploy.yaml?label=docs%20deployment&style=flat-square)
+
+https://www.npmjs.com/package/ivao-sdk
 ___
 ## Introduction
 The IVAO-SDK is a wrapper for interacting with the IVAO API and pulling data from IVAO for use in any web app.
